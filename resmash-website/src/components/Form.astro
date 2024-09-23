@@ -1,0 +1,175 @@
+<form
+  class="formmm fixed left-0 top-0 z-50 hidden h-screen w-screen py-12"
+  action="https://formsubmit.co/info@resmash.com"
+  method="POST"
+>
+  <div
+    class="menueform-bg absolute left-0 top-0 h-screen w-screen cursor-pointer backdrop-blur"
+    style="background-color: rgba(255, 255, 255, 0.3)"
+  >
+  </div>
+  <div
+    class="form-menue relative mx-auto max-h-full max-w-xl overflow-scroll rounded-2xl bg-slate-200 p-5 text-slate-800 shadow-lg"
+  >
+    <div class="collapse-arrow collapse relative z-10 bg-slate-100 shadow">
+      <input type="radio" name="my-accordion-2" checked="checked" />
+      <h4 class="collapse-title text-lg font-medium">Court</h4>
+      <div class="collapse-content">
+        <div class="flex flex-col gap-4">
+          <div>
+            <label class="" for="howmany">
+              How many courts? <span class="select-none">*</span>
+            </label>
+            <div class="flex gap-2">
+              <div class="grow">
+                <input
+                  name="numberofcourts"
+                  id="howmany"
+                  class="range-counterrr range mt-4"
+                  type="range"
+                  min="0"
+                  max="9"
+                  value="1"
+                  step="1"
+                />
+                <div class="flex w-full justify-between px-2 text-xs">
+                  <span>|</span>
+                  <span>|</span>
+                  <span>|</span>
+                  <span>|</span>
+                  <span>|</span>
+                  <span>|</span>
+                  <span>|</span>
+                  <span>|</span>
+                  <span>|</span>
+                  <span>|</span>
+                </div>
+              </div>
+              <input
+                required
+                type="number"
+                max="9"
+                min="0"
+                placeholder=""
+                value="1"
+                class="spin-boxxx input input-bordered min w-20"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <label for="whattype" class="mb-4" for="">
+              Which type? <span class="select-none">*</span>
+            </label>
+            <select
+              name="type"
+              required
+              id="whattype"
+              class="select select-bordered"
+            >
+              <option disabled selected> Select Type </option>
+              <option>Classic / Standard</option>
+              <option>Panoramic</option>
+              <option>Super Panoramic</option>
+            </select>
+          </div>
+          <div class="flex flex-col">
+            <label class="mb-4" for="whatsize">
+              Which size? <span class="select-none">*</span>
+            </label>
+            <select
+              name="size"
+              required
+              id="whatsize"
+              class="select select-bordered"
+            >
+              <option disabled selected> Select size </option>
+              <option>Dou (20x10m)</option>
+              <option>Singel (20x6m)</option>
+            </select>
+          </div>
+          <div class="flex flex-col">
+            <label for="use" class="mb-4" for="">
+              Use? <span class="select-none">*</span>
+            </label>
+            <select name="use" required id="use" class="select select-bordered">
+              <option disabled selected> Select Use </option>
+              <option>Indoors</option>
+              <option>Outdoors</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="collapse-arrow collapse mt-4 bg-slate-100 shadow">
+      <input type="radio" name="my-accordion-2" />
+      <div class="collapse-title text-lg font-medium">Contact and Submit</div>
+      <div class="collapse-content">
+        <div class="flex gap-4">
+          <div>
+            <label class="" for="firstname">
+              First Name <span class="select-none">*</span>
+            </label>
+            <input
+              name="firstname"
+              required
+              id="firstname"
+              type="text"
+              placeholder="First Name"
+              class="input input-bordered my-4 w-full"
+            />
+          </div>
+          <div>
+            <label class="" for="lastname">
+              Last Name <span class="select-none">*</span>
+            </label>
+            <input
+              name="lastname"
+              required
+              id="lastname"
+              type="text"
+              placeholder="Last Name"
+              class="input input-bordered my-4 w-full"
+            />
+          </div>
+        </div>
+        <div>
+          <label class="" for="phonenumber">
+            Phonenumber <span class="select-none">*</span>
+          </label>
+          <input
+            name="phonenumber"
+            required
+            id="phonenumber"
+            type="text"
+            placeholder="Type Your Phonenumber here"
+            class="input input-bordered my-4 w-full"
+          />
+        </div>
+        <div>
+          <label class="" for="email">
+            E-mail <span class="select-none">*</span>
+          </label>
+          <input
+            name="email"
+            required
+            id="email"
+            type="text"
+            placeholder="Type Your E-mail here"
+            class="input input-bordered my-4 w-full"
+          />
+        </div>
+        <div>
+          <label class="" for="other"> Other questions? </label>
+          <textarea
+            name="questions"
+            id="other"
+            class="textarea textarea-bordered my-4 w-full"
+            placeholder="Type Here"></textarea>
+        </div>
+        <button type="submit" class="btn btn-block btn-primary">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</form>;
