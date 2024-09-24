@@ -20,12 +20,14 @@ import Waves from "./Waves.astro";
         </p>
         <div class="flex justify-center gap-4 pl-5 md:justify-start">
           <button
+            onclick="document.querySelector('footer').scrollIntoView({ behavior: 'smooth' })"
             class="btn uppercase active:text-sky-400"
             btn-action="contact"
           >
             book a call
           </button>
           <button
+            onclick="document.querySelector('.this-is-how-we').scrollIntoView({ behavior: 'smooth' })"
             class="btn uppercase active:text-sky-400"
             btn-action="learn-more"
           >
