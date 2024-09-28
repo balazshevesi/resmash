@@ -1,10 +1,16 @@
 import { useState } from "react";
 
+import type { Data } from "../content/textEnglish";
+// Ensure to use the correct path
 import { $form } from "../store/Form";
 import { useStore } from "@nanostores/react";
 import { Loader } from "lucide-react";
 
-export default function Form() {
+interface FormProps {
+  content: Data;
+}
+
+export default function Form({ content }: FormProps) {
   const form = useStore($form);
 
   // Form state
@@ -29,12 +35,11 @@ export default function Form() {
   // Form submission handler
   async function onSubmit(e: any) {
     e.preventDefault();
-    // Set loading state
     $form.set({ ...$form.get(), isLoading: true });
 
     try {
       const response = await fetch(
-        "https://form-to-email-production.up.railway.app/balazshevesi13@gmail.com",
+        "https://form-to-email-production.up.railway.app/info@resmash.com",
         {
           method: "POST",
           body: JSON.stringify({ ...formData, _subject: "Formulär: Resmash" }),
@@ -43,7 +48,6 @@ export default function Form() {
       );
 
       if (response.ok) {
-        // Handle success
         $form.set({
           ...$form.get(),
           isLoading: false,
@@ -62,11 +66,9 @@ export default function Form() {
           questions: "",
         }); // Reset the form
       } else {
-        // Handle error
         throw new Error("Form submission failed.");
       }
     } catch (error) {
-      // Handle fetch error
       $form.set({
         ...$form.get(),
         isLoading: false,
@@ -93,12 +95,15 @@ export default function Form() {
         <div className="form-menue relative mx-auto max-h-full max-w-xl overflow-scroll rounded-2xl bg-slate-200 p-5 text-slate-800 shadow-lg">
           <div className="collapse collapse-arrow relative z-10 bg-slate-100 shadow">
             <input type="radio" name="my-accordion-2" defaultChecked />
-            <h4 className="collapse-title text-lg font-medium">Court</h4>
+            <h4 className="collapse-title text-lg font-medium">
+              {content.form.title}
+            </h4>
             <div className="collapse-content">
               <div className="flex flex-col gap-4">
                 <div>
                   <label htmlFor="howmany">
-                    How many courts? <span className="select-none">*</span>
+                    {content.form.labels.numberOfCourts}{" "}
+                    <span className="select-none">*</span>
                   </label>
                   <div className="flex gap-2">
                     <div className="grow">
@@ -139,7 +144,8 @@ export default function Form() {
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="whattype" className="mb-4">
-                    Which type? <span className="select-none">*</span>
+                    {content.form.labels.type}{" "}
+                    <span className="select-none">*</span>
                   </label>
                   <select
                     name="type"
@@ -150,16 +156,22 @@ export default function Form() {
                     onChange={handleChange}
                   >
                     <option disabled value="">
-                      Select Type
+                      {content.form.placeholders.type}
                     </option>
-                    <option value="classic">Classic / Standard</option>
-                    <option value="panoramic">Panoramic</option>
-                    <option value="super_panoramic">Super Panoramic</option>
+                    {content.form.options.types.map((type) => (
+                      <option
+                        key={type}
+                        value={type.toLowerCase().replace(" ", "_")}
+                      >
+                        {type}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="whatsize" className="mb-4">
-                    Which size? <span className="select-none">*</span>
+                    {content.form.labels.size}{" "}
+                    <span className="select-none">*</span>
                   </label>
                   <select
                     name="size"
@@ -170,15 +182,22 @@ export default function Form() {
                     onChange={handleChange}
                   >
                     <option disabled value="">
-                      Select size
+                      {content.form.placeholders.size}
                     </option>
-                    <option value="duo">Duo (20x10m)</option>
-                    <option value="singel">Singel (20x6m)</option>
+                    {content.form.options.sizes.map((size) => (
+                      <option
+                        key={size}
+                        value={size.toLowerCase().replace(" ", "_")}
+                      >
+                        {size}
+                      </option>
+                    ))}
                   </select>
                 </div>
                 <div className="flex flex-col">
                   <label htmlFor="use" className="mb-4">
-                    Use? <span className="select-none">*</span>
+                    {content.form.labels.use}{" "}
+                    <span className="select-none">*</span>
                   </label>
                   <select
                     name="use"
@@ -189,10 +208,13 @@ export default function Form() {
                     onChange={handleChange}
                   >
                     <option disabled value="">
-                      Select Use
+                      {content.form.placeholders.use}
                     </option>
-                    <option value="indoors">Indoors</option>
-                    <option value="outdoors">Outdoors</option>
+                    {content.form.options.uses.map((use) => (
+                      <option key={use} value={use.toLowerCase()}>
+                        {use}
+                      </option>
+                    ))}
                   </select>
                 </div>
               </div>
@@ -207,14 +229,15 @@ export default function Form() {
               <div className="flex gap-4">
                 <div>
                   <label htmlFor="firstname">
-                    First Name <span className="select-none">*</span>
+                    {content.form.labels.firstName}{" "}
+                    <span className="select-none">*</span>
                   </label>
                   <input
                     name="firstname"
                     required
                     id="firstname"
                     type="text"
-                    placeholder="First Name"
+                    placeholder={content.form.placeholders.firstName}
                     className="input input-bordered my-4 w-full"
                     value={formData.firstname}
                     onChange={handleChange}
@@ -222,14 +245,15 @@ export default function Form() {
                 </div>
                 <div>
                   <label htmlFor="lastname">
-                    Last Name <span className="select-none">*</span>
+                    {content.form.labels.lastName}{" "}
+                    <span className="select-none">*</span>
                   </label>
                   <input
                     name="lastname"
                     required
                     id="lastname"
                     type="text"
-                    placeholder="Last Name"
+                    placeholder={content.form.placeholders.lastName}
                     className="input input-bordered my-4 w-full"
                     value={formData.lastname}
                     onChange={handleChange}
@@ -238,14 +262,15 @@ export default function Form() {
               </div>
               <div>
                 <label htmlFor="phonenumber">
-                  Phonenumber <span className="select-none">*</span>
+                  {content.form.labels.phoneNumber}{" "}
+                  <span className="select-none">*</span>
                 </label>
                 <input
                   name="phonenumber"
                   required
                   id="phonenumber"
                   type="text"
-                  placeholder="Type Your Phonenumber here"
+                  placeholder={content.form.placeholders.phoneNumber}
                   className="input input-bordered my-4 w-full"
                   value={formData.phonenumber}
                   onChange={handleChange}
@@ -253,42 +278,44 @@ export default function Form() {
               </div>
               <div>
                 <label htmlFor="email">
-                  E-mail <span className="select-none">*</span>
+                  {content.form.labels.email}{" "}
+                  <span className="select-none">*</span>
                 </label>
                 <input
                   name="email"
                   required
                   id="email"
                   type="email"
-                  placeholder="Type Your E-mail here"
+                  placeholder={content.form.placeholders.email}
                   className="input input-bordered my-4 w-full"
                   value={formData.email}
                   onChange={handleChange}
                 />
               </div>
               <div>
-                <label htmlFor="other">Other questions?</label>
+                <label htmlFor="other">{content.form.labels.questions}</label>
                 <textarea
                   name="questions"
                   id="other"
                   className="textarea textarea-bordered my-4 w-full"
-                  placeholder="Type Here"
+                  placeholder={content.form.placeholders.questions}
                   value={formData.questions}
                   onChange={handleChange}
                 ></textarea>
               </div>
               {form.isError && (
                 <div className="mb-3 font-semibold text-red-600">
-                  Sorry, something went wrong, please contact us directly
+                  {content.form.errorMessage}
                 </div>
               )}
               {form.isSubmitSuccess && (
                 <div className="mb-3 font-semibold text-green-600">
-                  Successfully submitted the form
+                  {content.form.successMessage}
                 </div>
               )}
               <button type="submit" className="btn btn-primary btn-block">
-                Submit {form.isLoading && <Loader className="animate-spin" />}
+                {content.form.submitButton}{" "}
+                {form.isLoading && <Loader className="animate-spin" />}
               </button>
             </div>
           </div>

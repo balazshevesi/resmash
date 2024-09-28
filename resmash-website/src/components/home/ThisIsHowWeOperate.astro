@@ -1,5 +1,24 @@
 ---
+import type { Data } from "../../content/textEnglish"; // Make sure to use the correct path to your content file
 import Divider from "../sub-components/Divider.astro";
+
+interface Props {
+  content: Data;
+}
+const { content } = Astro.props;
+
+// Functions for each timeline step to comply with Astro syntax requirements
+const TimelineStep1 = () => content.home.thirdSection.timeline[0];
+const TimelineStep2 = () => content.home.thirdSection.timeline[1];
+const TimelineStep3 = () => content.home.thirdSection.timeline[2];
+const TimelineStep4 = () => content.home.thirdSection.timeline[3];
+const TimelineStep5 = () => content.home.thirdSection.timeline[4];
+const TimelineStep6 = () => content.home.thirdSection.timeline[5];
+const TimelineStep7 = () => content.home.thirdSection.timeline[6];
+
+// Other section content
+const SectionTitle = () => content.home.thirdSection.title;
+const Conclusion = () => content.home.thirdSection.content;
 ---
 
 <section
@@ -7,7 +26,11 @@ import Divider from "../sub-components/Divider.astro";
   page-section="learn-more"
 >
   <div class="mx-auto max-w-7xl">
-    <h4 class="text-center text-5xl font-bold">This is how we operate</h4>
+    <!-- Section Title -->
+    <h4 class="text-center text-5xl font-bold">
+      <SectionTitle />
+    </h4>
+
     <div class="flex flex-col justify-center py-6 sm:py-12">
       <div class="w-full px-2 py-3 sm:mx-auto sm:max-w-5xl sm:px-0">
         <div class="relative text-base font-medium text-gray-700 antialiased">
@@ -17,7 +40,7 @@ import Divider from "../sub-components/Divider.astro";
           >
           </div>
 
-          <!-- Left section, set by justify-start and sm:pr-8 -->
+          <!-- Step 1 -->
           <div class="mt-6 sm:mb-12 sm:mt-0">
             <div class="flex flex-col items-center sm:flex-row">
               <div
@@ -25,8 +48,7 @@ import Divider from "../sub-components/Divider.astro";
               >
                 <div class="w-full sm:w-1/2 sm:pr-8">
                   <div class="rounded-2xl bg-white p-4 shadow-md">
-                    <strong>Contact:</strong> The customer contacts us with a request
-                    to buy a used padel court.
+                    <TimelineStep1 />
                   </div>
                 </div>
               </div>
@@ -38,7 +60,7 @@ import Divider from "../sub-components/Divider.astro";
             </div>
           </div>
 
-          <!-- Right section, set by justify-end and sm:pl-8 -->
+          <!-- Step 2 -->
           <div class="mt-6 sm:mb-12 sm:mt-0">
             <div class="flex flex-col items-center sm:flex-row">
               <div
@@ -46,9 +68,7 @@ import Divider from "../sub-components/Divider.astro";
               >
                 <div class="w-full sm:w-1/2 sm:pl-8">
                   <div class="rounded-2xl bg-white p-4 shadow-md">
-                    <strong>Consultation:</strong> We consult with the customer to
-                    understand their needs and preferences for the padel court they
-                    want to buy.
+                    <TimelineStep2 />
                   </div>
                 </div>
               </div>
@@ -60,7 +80,7 @@ import Divider from "../sub-components/Divider.astro";
             </div>
           </div>
 
-          <!-- Left section, set by justify-start and sm:pr-8 -->
+          <!-- Step 3 -->
           <div class="mt-6 sm:mb-12 sm:mt-0">
             <div class="flex flex-col items-center sm:flex-row">
               <div
@@ -68,9 +88,7 @@ import Divider from "../sub-components/Divider.astro";
               >
                 <div class="w-full sm:w-1/2 sm:pr-8">
                   <div class="rounded-2xl bg-white p-4 shadow-md">
-                    <strong>Search:</strong> We use our extensive network and resources
-                    to search for a suitable used padel court that matches the customer's
-                    requirements.
+                    <TimelineStep3 />
                   </div>
                 </div>
               </div>
@@ -82,17 +100,15 @@ import Divider from "../sub-components/Divider.astro";
             </div>
           </div>
 
-          <!-- Right section, set by justify-end and sm:pl-8 -->
-          <div class="mt-6 sm:mt-0">
+          <!-- Step 4 -->
+          <div class="mt-6 sm:mb-12 sm:mt-0">
             <div class="flex flex-col items-center sm:flex-row">
               <div
                 class="mx-auto flex w-full items-center justify-end transition-transform hover:-translate-y-1"
               >
                 <div class="w-full sm:w-1/2 sm:pl-8">
                   <div class="rounded-2xl bg-white p-4 shadow-md">
-                    <strong>Inspection:</strong> Once we have found a suitable used
-                    padel court, we inspect it thoroughly to ensure that it meets
-                    our high-quality standards.
+                    <TimelineStep4 />
                   </div>
                 </div>
               </div>
@@ -103,7 +119,8 @@ import Divider from "../sub-components/Divider.astro";
               </div>
             </div>
           </div>
-          <!-- Left section, set by justify-start and sm:pr-8 -->
+
+          <!-- Step 5 -->
           <div class="mt-6 sm:mb-12 sm:mt-0">
             <div class="flex flex-col items-center sm:flex-row">
               <div
@@ -111,8 +128,7 @@ import Divider from "../sub-components/Divider.astro";
               >
                 <div class="w-full sm:w-1/2 sm:pr-8">
                   <div class="rounded-2xl bg-white p-4 shadow-md">
-                    <strong>Delivery:</strong> We coordinate the delivery of the
-                    padel court to the customer's location.
+                    <TimelineStep5 />
                   </div>
                 </div>
               </div>
@@ -123,16 +139,16 @@ import Divider from "../sub-components/Divider.astro";
               </div>
             </div>
           </div>
-          <!-- Right section, set by justify-end and sm:pl-8 -->
-          <div class="mt-6 sm:mt-0">
+
+          <!-- Step 6 -->
+          <div class="mt-6 sm:mb-12 sm:mt-0">
             <div class="flex flex-col items-center sm:flex-row">
               <div
                 class="mx-auto flex w-full items-center justify-end transition-transform hover:-translate-y-1"
               >
                 <div class="w-full sm:w-1/2 sm:pl-8">
                   <div class="rounded-2xl bg-white p-4 shadow-md">
-                    <strong>Installation:</strong> If requested, we can also arrange
-                    for the installation of the padel court at the customer's site.
+                    <TimelineStep6 />
                   </div>
                 </div>
               </div>
@@ -143,7 +159,8 @@ import Divider from "../sub-components/Divider.astro";
               </div>
             </div>
           </div>
-          <!-- Left section, set by justify-start and sm:pr-8 -->
+
+          <!-- Step 7 -->
           <div class="mt-6 sm:mb-12 sm:mt-0">
             <div class="flex flex-col items-center sm:flex-row">
               <div
@@ -151,9 +168,7 @@ import Divider from "../sub-components/Divider.astro";
               >
                 <div class="w-full sm:w-1/2 sm:pr-8">
                   <div class="rounded-2xl bg-white p-4 shadow-md">
-                    <strong>Follow-up:</strong> After the delivery and/or installation,
-                    we follow up with the customer to ensure that everything has
-                    been done to their satisfaction.
+                    <TimelineStep7 />
                   </div>
                 </div>
               </div>
@@ -166,13 +181,7 @@ import Divider from "../sub-components/Divider.astro";
           </div>
         </div>
         <p class="relative z-10 text-lg font-light">
-          After we have found a suitable court and inspected it to ensure it
-          meets our customer's expectations, we will request a reservation fee
-          from the customer. This fee secures the purchase and covers any
-          expenses related to dismantling, transportation, and reinstallation of
-          the court. The remaining payment is due upon delivery of the court to
-          the customer. Our goal is to provide a hassle-free and seamless
-          process for our customers, from start to finish.
+          <Conclusion />
         </p>
       </div>
     </div>

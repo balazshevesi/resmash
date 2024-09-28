@@ -3,27 +3,27 @@ import "@fontsource-variable/chivo";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer.astro";
 import Form from "../components/Form";
+import type { Data } from "../content/textEnglish";
 
 interface Props {
-  title: string;
+  content: Data;
 }
-
-const { title } = Astro.props;
+const { content } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={content.lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{content.title}</title>
   </head>
   <body class="bg-slate-100">
-    <Nav client:load />
-    <Form client:idle />
+    <Nav client:load content={content} />
+    <Form client:idle content={content} />
     <div
       class="fixed top-0 z-30 h-16 w-full bg-gradient-to-b from-black opacity-30"
       style="
@@ -32,6 +32,6 @@ const { title } = Astro.props;
     >
     </div>
     <slot />
-    <Footer />
+    <Footer content={content} />
   </body>
 </html>

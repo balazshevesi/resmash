@@ -1,8 +1,13 @@
+import type { Data } from "../content/textEnglish";
 import { $form } from "../store/Form";
 import { $nav } from "../store/Nav";
 import { useStore } from "@nanostores/react";
 
-export default function Nav() {
+interface FormProps {
+  content: Data;
+}
+
+export default function Nav({ content }: FormProps) {
   const form = useStore($form);
   const nav = useStore($nav);
 
@@ -15,7 +20,7 @@ export default function Nav() {
             <img
               className="w-44 rounded-lg border-t-2 border-white border-opacity-10 bg-slate-100 bg-opacity-10 px-2"
               src="./images/logo.png"
-              alt=""
+              alt="Resmash Logo"
             />
           </div>
           <div className="nav-middle hidden gap-10 md:flex">
@@ -28,7 +33,7 @@ export default function Nav() {
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Learn More
+              {content.nav.btn1} {/* Access 'Learn More' label from content */}
             </button>
             <button
               btn-action="contact"
@@ -39,7 +44,7 @@ export default function Nav() {
                   ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Contact Us
+              {content.nav.btn2} {/* Access 'Contact Us' label from content */}
             </button>
           </div>
           <div className="nav-right hidden md:flex">
@@ -50,7 +55,8 @@ export default function Nav() {
               className="btn uppercase active:text-sky-400"
               btn-action="open-form"
             >
-              Interest submission
+              {content.nav.cta}{" "}
+              {/* Access 'Interest Submission' label from content */}
             </button>
           </div>
           <div className="nav-mobile-btn md:hidden">
@@ -97,7 +103,8 @@ export default function Nav() {
                 className="rounded-lg bg-white bg-opacity-10 px-8 py-2 transition-transform active:scale-95"
                 btn-action="learn-more"
               >
-                Learn More
+                {content.nav.btn1}{" "}
+                {/* Access 'Learn More' label from content */}
               </button>
               <button
                 onClick={() => {
@@ -109,7 +116,8 @@ export default function Nav() {
                 className="rounded-lg bg-white bg-opacity-10 px-8 py-2 transition-transform active:scale-95"
                 btn-action="contact"
               >
-                Contact Us
+                {content.nav.btn2}{" "}
+                {/* Access 'Contact Us' label from content */}
               </button>
               <button
                 onClick={() => {
@@ -119,11 +127,12 @@ export default function Nav() {
                 className="btn uppercase active:text-sky-400"
                 btn-action="open-form"
               >
-                Interest submission
+                {content.nav.cta}{" "}
+                {/* Access 'Interest Submission' label from content */}
               </button>
             </div>
           </div>
-        )}{" "}
+        )}
       </nav>
     </div>
   );

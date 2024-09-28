@@ -1,5 +1,17 @@
 ---
 import Divider from "../sub-components/Divider.astro";
+import type { Data } from "../../content/textEnglish"; // Change the path if your Hungarian content is in another file
+
+interface Props {
+  content: Data;
+}
+const { content } = Astro.props;
+
+// Create functions for each JSX element needed
+const Title = () => content.home.secondSection.title;
+const Paragraph1 = () => content.home.secondSection.content.props.children[0];
+const Paragraph2 = () => content.home.secondSection.content.props.children[2];
+const EndTitle = () => content.home.secondSection.endTitle;
 ---
 
 <section class="relative p-12 pt-24">
@@ -15,28 +27,17 @@ import Divider from "../sub-components/Divider.astro";
     </div>
     <div class="relative z-20 flex flex-col gap-10 md:flex-row">
       <h2 class="flex-1 text-4xl font-bold">
-        Welcome to our company! We're glad to have you with us
+        <Title />
       </h2>
       <div class="flex flex-1 flex-col gap-4 text-lg font-light leading-8">
         <p>
-          We are a dedicated team of experts specializing in purchasing and
-          selling second-hand padel courts. Our primary mission is to provide
-          high-quality, well-maintained courts from Sweden to other EU
-          countries. With extensive industry knowledge, we excel in tailoring
-          our offerings to match our customers' unique needs. We are committed
-          to ensuring customer satisfaction and a hassle-free experience.
+          <Paragraph1 />
         </p>
         <p>
-          We take immense pride in the quality of our second-hand courts,
-          exclusively dealing with those in excellent condition. Our team is
-          always available to assist you, from selecting the right court to
-          handling delivery. We also excel in identifying potential buyers for
-          second-hand padel courts and related items, collaborating with Swedish
-          bankruptcy administrators to facilitate cross-border sales within the
-          EU.
+          <Paragraph2 />
         </p>
         <h3 class="pt-4 text-3xl font-bold text-sky-500">
-          Thank you for choosing us, and we look forward to serving you!
+          <EndTitle />
         </h3>
       </div>
     </div>

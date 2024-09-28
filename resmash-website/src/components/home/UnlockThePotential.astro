@@ -1,31 +1,25 @@
+---
+import type { Data } from "../../content/textEnglish"; // Change the path if your Hungarian content is in another file
+
+interface Props {
+  content: Data;
+}
+const { content } = Astro.props;
+
+// Create functions for each JSX element needed
+const SectionTitle = () => content.home.fourthSection.title;
+const ParagraphContent = () => content.home.fourthSection.content;
+---
+
 <section class="fourth-page scroll-mt-20 p-12 pb-0" page-section="learn-more">
   <div class="mx-auto max-w-7xl">
     <h4 class="mb-10 text-center text-5xl font-bold">
-      Unlock the Potential of Second-Hand Padel Courts
+      <SectionTitle />
     </h4>
-    <p class="relative z-10 mx-auto mt-12 max-w-3xl text-lg font-light sm:mt-0">
-      Investing in a used padel court offers numerous benefits, especially for
-      clubs and facilities looking to diversify their offerings. Here's why:
-      <br />
-      <br />
-      <strong class="font-semibold">Cost-Effective Solution:</strong> Opting for
-      a second-hand padel court is a budget-friendly way to introduce this popular
-      sport to your facility. Used padel courts provide a cost-effective alternative,
-      allowing clubs to allocate resources more efficiently.
-      <br />
-      <br />
-      <strong class="font-semibold">Maximize Facility Space:</strong> Many tennis
-      clubs have successfully repurposed their space by replacing traditional tennis
-      courts with used padel courts. By making this switch, clubs can accommodate
-      more players and offer a wider range of activities, ultimately maximizing facility
-      usage.
-      <br />
-      <br />
-      <strong class="font-semibold">Community Engagement:</strong> Padel tennis has
-      gained widespread popularity, attracting players of all ages and skill levels.
-      By incorporating used padel courts into your facility, you can tap into this
-      growing trend and attract new members from the local community. It's a great
-      way to boost engagement and foster a sense of camaraderie among players.
-    </p>
+    <div
+      class="relative z-10 mx-auto mt-12 max-w-3xl text-lg font-light sm:mt-0"
+    >
+      <ParagraphContent />
+    </div>
   </div>
 </section>
