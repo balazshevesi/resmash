@@ -8,83 +8,75 @@ const data = {
       h1: "Csatlakozz a padel forradalomhoz velünk!",
       h2: (
         <>
-          Vezesd a padel játékot egy sikeres pályával. Sokoldalú és
-          felhasználóbarát pályáink kiváló játéktalajt biztosítanak tagjaid
-          számára. Tökéletes kluboknak, ligáknak és versenyszervezőknek.
+          Indítsd el padel klubodat gyorsan és kedvező áron velünk! Kis
+          csapatként személyesen gondoskodunk arról, hogy használt pályáink
+          azonnal elérhetők legyenek, így rövid időn belül megérkezhetnek
+          hozzád. Ha gyors és költséghatékony megoldást keresel, mi itt vagyunk,
+          hogy segítsünk!
         </>
       ),
       cta1: "Foglalj időpontot",
       cta2: "Tudj meg többet",
     },
     secondSection: {
-      title: "Üdvözlünk cégünknél! Örülünk, hogy itt vagy velünk",
+      title: "Üdvözlünk a csapatunknál! Örülünk, hogy velünk vagy!",
       content: (
         <>
-          Mi egy elkötelezett szakértői csapat vagyunk, akik használt padel
-          pályák vásárlására és értékesítésére szakosodtak. Fő küldetésünk, hogy
-          kiváló minőségű, jól karbantartott pályákat biztosítsunk Svédországból
-          más EU-országok számára. Kiterjedt iparági ismereteinkkel személyre
-          szabott ajánlatokat kínálunk, hogy megfeleljenek ügyfeleink egyedi
-          igényeinek. Elkötelezettek vagyunk az ügyfelek elégedettsége és a
-          zökkenőmentes élmény biztosítása iránt.
+          Mi egy lelkes, kis csapat vagyunk, akik használt padel pályák
+          értékesítésére szakosodtunk. Külföldről segítünk jó minőségű pályákat
+          találni. Mivel személyesen foglalkozunk minden egyes megrendeléssel,
+          igyekszünk rugalmas és egyedi ajánlatokat adni. Célunk, hogy elégedett
+          ügyfeleink legyenek és a vásárlás minél egyszerűbb legyen.
           <br />
-          Büszkék vagyunk a használt pályák minőségére, kizárólag kiváló
-          állapotban lévőket kínálunk. Csapatunk mindig elérhető, hogy segítsen
-          a megfelelő pálya kiválasztásában és a szállítás lebonyolításában.
-          Emellett kiválóan azonosítjuk a potenciális vásárlókat használt padel
-          pályák és kapcsolódó tételek esetében, együttműködve a svéd
-          csődgondnokokkal az EU-n belüli határokon átnyúló értékesítések
-          elősegítése érdekében.
+          Gyorsak és elérhetők vagyunk, hogy segítsünk neked megtalálni a
+          megfelelő használt padel pályát. Csapatunk mindig rendelkezésre áll a
+          kiválasztás és a szállítás lebonyolításában. Külföldi partnereinkkel
+          együttműködve könnyen segítünk a határokon átnyúló vásárlások során.
+          Az ár-érték arányra összpontosítunk, hogy megfizethető alternatívákat
+          kínáljunk.
         </>
       ),
       endTitle:
-        "Köszönjük, hogy minket választottál, és várjuk, hogy szolgálhassunk téged!",
+        "Köszönjük, hogy minket választottál! Alig várjuk, hogy segíthessünk!",
     },
     thirdSection: {
       title: "Így működünk",
       timeline: [
         <>
-          <strong>Kapcsolatfelvétel:</strong> Az ügyfél kapcsolatba lép velünk,
-          hogy használt padel pályát vásároljon.
+          <strong>Kapcsolatfelvétel:</strong> Írj nekünk, ha használt padel
+          pályát szeretnél vásárolni.
         </>,
         <>
-          <strong>Konzultáció:</strong> Konzultálunk az ügyféllel, hogy
-          megértsük igényeiket és preferenciáikat a megvásárolni kívánt padel
-          pályával kapcsolatban.
+          <strong>Konzultáció:</strong> Beszélgessünk! Segítünk megérteni, mire
+          van szükséged és mit keresel a pályával kapcsolatban.
         </>,
         <>
-          <strong>Keresés:</strong> Kiterjedt hálózatunkat és erőforrásainkat
-          használjuk, hogy megtaláljuk az ügyfél igényeinek megfelelő használt
-          padel pályát.
+          <strong>Keresés:</strong> Kapcsolatainkat és forrásainkat felhasználva
+          megtaláljuk a neked való használt pályát.
         </>,
         <>
-          <strong>Inspekció:</strong> Miután megtaláltunk egy megfelelő használt
-          padel pályát, alaposan megvizsgáljuk, hogy biztosítsuk, hogy
-          megfeleljen a magas minőségi előírásainknak.
+          <strong>Inspekció:</strong> Ha megtaláltuk a megfelelő pályát,
+          alaposan átnézzük, hogy minden rendben legyen.
         </>,
         <>
-          <strong>Szállítás:</strong> Koordináljuk a padel pálya szállítását az
-          ügyfél helyszínére.
+          <strong>Szállítás:</strong> Intézzük a pálya szállítását a kívánt
+          helyszínre.
         </>,
         <>
-          <strong>Telepítés:</strong> Kérésre a padel pálya telepítését is el
-          tudjuk intézni az ügyfél helyszínén.
+          <strong>Telepítés:</strong> Ha szükséged van rá, partnerünk tud
+          segíteni a pálya telepítésében is, mint extra szolgáltatás.
         </>,
         <>
-          <strong>Utókövetés:</strong> A szállítás és/vagy telepítés után
-          felvesszük a kapcsolatot az ügyféllel, hogy biztosítsuk, hogy minden
-          az elégedettségük szerint történt.
+          <strong>Utókövetés:</strong> Szállítás után is tartjuk a kapcsolatot,
+          hogy gyorsan tudjunk reagálni, ha újabb pályákra lenne szükséged.
         </>,
       ],
       content: (
         <>
-          Miután megtaláltuk a megfelelő pályát és megvizsgáltuk, hogy
-          megfelel-e az ügyfél elvárásainak, előleget kérünk az ügyféltől. Ez a
-          díj biztosítja a vásárlást, és fedezi a pálya leszerelésével,
-          szállításával és újratelepítésével kapcsolatos költségeket. A
-          fennmaradó összeg a pálya ügyfélhez történő szállításakor fizetendő.
-          Célunk, hogy zökkenőmentes és problémamentes folyamatot biztosítsunk
-          ügyfeleink számára, a kezdetektől a befejezésig.
+          Az előfoglalás garantálásához azonnali befizetés szükséges. Kérjük,
+          hogy a pálya árának 50%-át és a szállítási költséget fizesse ki, hogy
+          megkezdjük a szállítás tervezését és folyamatát. A fennmaradó összeg a
+          szállítás után esedékes.
         </>
       ),
     },
