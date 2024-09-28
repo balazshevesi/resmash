@@ -1,6 +1,12 @@
 import terms from "./terms";
+import { HU } from "country-flag-icons/react/3x2";
 
 const data = {
+  altLangLink: (
+    <a href="./hu" className="flex items-center justify-center px-4">
+      <HU title="United States" className="w-10 rounded-md" />
+    </a>
+  ),
   lang: "en",
   title: "Resmash - the place for padel",
   home: {

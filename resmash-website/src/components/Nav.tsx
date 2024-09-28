@@ -11,6 +11,8 @@ export default function Nav({ content }: FormProps) {
   const form = useStore($form);
   const nav = useStore($nav);
 
+  const AltLangLink = () => content.altLangLink;
+
   return (
     <div className="nav-wrapper fixed top-0 z-40 w-screen">
       <div className="nav-background absolute left-0 top-0 hidden h-screen w-full cursor-pointer bg-white bg-opacity-10 backdrop-blur-sm md:hidden"></div>
@@ -58,6 +60,7 @@ export default function Nav({ content }: FormProps) {
               {content.nav.cta}{" "}
               {/* Access 'Interest Submission' label from content */}
             </button>
+            <AltLangLink />
           </div>
           <div className="nav-mobile-btn md:hidden">
             <label className="btn swap swap-rotate uppercase">
