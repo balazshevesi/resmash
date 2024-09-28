@@ -9,12 +9,6 @@ interface FormProps {
   content: Data;
 }
 
-{
-  /* <a href="./hu" className="flex items-center justify-center px-4">
-<HU title="United States" className="w-10 rounded-md" />
-</a> */
-}
-
 export default function Nav({ content }: FormProps) {
   const form = useStore($form);
   const nav = useStore($nav);
