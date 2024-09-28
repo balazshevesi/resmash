@@ -2,16 +2,22 @@ import type { Data } from "../content/textEnglish";
 import { $form } from "../store/Form";
 import { $nav } from "../store/Nav";
 import { useStore } from "@nanostores/react";
+import { HU } from "country-flag-icons/react/3x2";
+import { GB } from "country-flag-icons/react/3x2";
 
 interface FormProps {
   content: Data;
 }
 
+{
+  /* <a href="./hu" className="flex items-center justify-center px-4">
+<HU title="United States" className="w-10 rounded-md" />
+</a> */
+}
+
 export default function Nav({ content }: FormProps) {
   const form = useStore($form);
   const nav = useStore($nav);
-
-  const AltLangLink = () => content.altLangLink;
 
   return (
     <div className="nav-wrapper fixed top-0 z-40 w-screen">
@@ -60,7 +66,16 @@ export default function Nav({ content }: FormProps) {
               {content.nav.cta}{" "}
               {/* Access 'Interest Submission' label from content */}
             </button>
-            <AltLangLink />
+            {content.lang === "en" && (
+              <a href="./hu" className="flex items-center justify-center px-4">
+                <HU title="United States" className="w-10 rounded-md" />
+              </a>
+            )}
+            {content.lang === "hu" && (
+              <a href="./" className="flex items-center justify-center px-4">
+                <GB title="United States" className="w-10 rounded-md" />
+              </a>
+            )}
           </div>
           <div className="nav-mobile-btn md:hidden">
             <label className="btn swap swap-rotate uppercase">
