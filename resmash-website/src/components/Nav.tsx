@@ -71,7 +71,18 @@ export default function Nav({ content }: FormProps) {
               </a>
             )}
           </div>
-          <div className="nav-mobile-btn md:hidden">
+          <div className="nav-mobile-btn flex md:hidden">
+            {content.lang === "en" && (
+              <a href="./hu" className="justify-right flex items-center px-4">
+                <HU title="United States" className="w-12 rounded-md" />
+              </a>
+            )}
+            {content.lang === "hu" && (
+              <a href="./" className="flex items-center justify-center px-4">
+                <GB title="United States" className="w-12 rounded-md" />
+              </a>
+            )}
+
             <label className="btn swap swap-rotate uppercase">
               <input
                 checked={nav.isMobileOpen}
