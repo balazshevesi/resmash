@@ -8,12 +8,13 @@ interface Props {
 const { content } = Astro.props;
 
 // Create functions for each JSX element needed
-const SectionTitle = () => content.home.fourthSection.title;
-const ParagraphContent = () => content.home.fourthSection.content;
+const SectionTitle = () => content.home.fifthSection.title;
+const ParagraphContent = () => content.home.fifthSection.content;
 ---
 
 <section class="fourth-page scroll-mt-20 p-12 pb-0" page-section="learn-more">
-  <div class="mx-auto max-w-7xl">
+  <Divider />
+  <div class="mx-auto mt-8 max-w-7xl">
     <h4 class="mb-10 text-center text-5xl font-bold">
       <SectionTitle />
     </h4>

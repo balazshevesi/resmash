@@ -11,6 +11,7 @@ const { content } = Astro.props;
 const Title = () => content.home.secondSection.title;
 const Paragraph1 = () => content.home.secondSection.content.props.children[0];
 const Paragraph2 = () => content.home.secondSection.content.props.children[2];
+const Paragraph3 = () => content.home.secondSection.content.props.children[4];
 const EndTitle = () => content.home.secondSection.endTitle;
 ---
 
@@ -35,6 +36,9 @@ const EndTitle = () => content.home.secondSection.endTitle;
         </p>
         <p>
           <Paragraph2 />
+        </p>
+        <p>
+          <Paragraph3 />
         </p>
         <h3 class="pt-4 text-3xl font-bold text-sky-500">
           <EndTitle />

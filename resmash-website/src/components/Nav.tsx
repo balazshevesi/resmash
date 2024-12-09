@@ -9,6 +9,34 @@ interface FormProps {
   content: Data;
 }
 
+function Flags({ content }: FormProps) {
+  return (
+    <>
+      {content.lang === "hu" && (
+        <a href="./" className="flex items-center justify-center px-4">
+          <HU title="Switch to English" className="w-10 rounded-md" />
+        </a>
+      )}
+      {content.lang === "en" && (
+        <a href="./hu" className="flex items-center justify-center px-4">
+          <GB title="Switch to Hungarian" className="w-10 rounded-md" />
+        </a>
+      )}
+      {/* <a href="./hu" className="relative flex items-center justify-center px-4">
+        <GB
+          className="absolute z-20 w-10 rounded-md"
+          title="Switch to Hungarian"
+        />
+        <HU
+          className="absolute z-10 w-10 rounded-md"
+          title="Switch to English"
+        />
+        <HU className="z-0 w-10 rounded-md" title="Switch to English" />
+      </a> */}
+    </>
+  );
+}
+
 export default function Nav({ content }: FormProps) {
   const form = useStore($form);
   const nav = useStore($nav);
@@ -60,29 +88,10 @@ export default function Nav({ content }: FormProps) {
               {content.nav.cta}{" "}
               {/* Access 'Interest Submission' label from content */}
             </button>
-            {content.lang === "en" && (
-              <a href="./hu" className="flex items-center justify-center px-4">
-                <HU title="Hungarian" className="w-10 rounded-md" />
-              </a>
-            )}
-            {content.lang === "hu" && (
-              <a href="./" className="flex items-center justify-center px-4">
-                <GB title="English" className="w-10 rounded-md" />
-              </a>
-            )}
+            <Flags content={content} />
           </div>
           <div className="nav-mobile-btn flex md:hidden">
-            {content.lang === "en" && (
-              <a href="./hu" className="justify-right flex items-center px-4">
-                <HU title="Hungarian" className="w-12 rounded-md" />
-              </a>
-            )}
-            {content.lang === "hu" && (
-              <a href="./" className="flex items-center justify-center px-4">
-                <GB title="English" className="w-12 rounded-md" />
-              </a>
-            )}
-
+            <Flags content={content} />
             <label className="btn swap swap-rotate uppercase">
               <input
                 checked={nav.isMobileOpen}

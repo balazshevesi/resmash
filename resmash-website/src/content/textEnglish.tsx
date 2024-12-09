@@ -5,39 +5,41 @@ const data = {
   title: "Resmash - the place for padel",
   home: {
     header: {
-      h1: "Join the padel revolution with us!",
+      h1: "Second-Hand Padel Courts at Unbeatable Prices!",
       h2: (
         <>
-          Lead the padel game with a successful court. Our versatile and
-          user-friendly courts offer a top-notch playing surface to your
-          members. Perfect for clubs, leagues, and tournament organizers.
+          Looking for affordable padel courts? Resmash specializes in used and
+          second-hand courts sourced from Sweden, offering you high-quality
+          options at a fraction of the cost of new ones. By choosing a
+          second-hand court, you not only save money but also contribute to
+          sustainability by giving these courts a second life.
         </>
       ),
       cta1: "Book a call",
       cta2: "Learn more",
     },
     secondSection: {
-      title: "Welcome to our company! We're glad to have you with us",
+      title: "Affordable Second-Hand Padel Courts—Focused on Value for Money",
       content: (
         <>
-          We are a dedicated team of experts specializing in purchasing and
-          selling second-hand padel courts. Our primary mission is to provide
-          high-quality, well-maintained courts from Sweden to other EU
-          countries. With extensive industry knowledge, we excel in tailoring
-          our offerings to match our customers' unique needs. We are committed
-          to ensuring customer satisfaction and a hassle-free experience.
+          We specialize in buying and selling second-hand padel courts, with a
+          clear focus on offering cost-effective solutions to our customers. Our
+          courts come primarily from Sweden and are carefully selected to ensure
+          they remain fully functional and ready for reuse.
           <br />
-          We take immense pride in the quality of our second-hand courts,
-          exclusively dealing with those in excellent condition. Our team is
-          always available to assist you, from selecting the right court to
-          handling delivery. We also excel in identifying potential buyers for
-          second-hand padel courts and related items, collaborating with Swedish
-          bankruptcy administrators to facilitate cross-border sales within the
-          EU.
+          Our customers prioritize value, and with Resmash, you gain access to
+          second-hand padel courts at unbeatable prices. Ideal for clubs or
+          facilities looking to expand while keeping costs low.
+          <br />
+          We also work closely with Swedish bankruptcy administrators, helping
+          to repurpose unused courts and related equipment across EU markets.
+          Whether you need assistance with selecting a court or arranging
+          delivery, our team is here to make the process smooth and
+          straightforward.
         </>
       ),
       endTitle:
-        "Thank you for choosing us, and we look forward to serving you!",
+        "Choose Resmash for your second-hand padel court needs and maximize your investment!",
     },
     thirdSection: {
       title: "This is how we operate",
@@ -120,6 +122,28 @@ const data = {
           facility, you can tap into this growing trend and attract new members
           from the local community. It's a great way to boost engagement and
           foster a sense of camaraderie among players.
+        </>
+      ),
+    },
+    fifthSection: {
+      title: "New vs. Used Padel Courts: Get Our Expert Guide!",
+      content: (
+        <>
+          Investing in a used padel court offers numerous benefits, especially
+          for clubs and facilities looking to diversify their offerings. Here's
+          why:
+          <br />
+          <br />
+          <strong className="font-semibold">
+            Cost-Effective Solution:
+          </strong>{" "}
+          Not sure if a new or second-hand padel court is the best fit for your
+          needs? Our detailed guide breaks down the pros and cons of each
+          option, helping you make an informed decision that suits your budget
+          and goals.
+          <br />
+          Email us today to receive your free copy and take the next step
+          towards building your dream padel facility!
         </>
       ),
     },
