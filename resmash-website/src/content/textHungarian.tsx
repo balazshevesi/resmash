@@ -117,6 +117,10 @@ const data = {
         </>
       ),
     },
+    fifthSection: {
+      title: "",
+      content: <></>,
+    },
   },
   form: {
     title: "Árajánlat kérése",
